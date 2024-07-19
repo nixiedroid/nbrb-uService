@@ -25,8 +25,7 @@ title: Sitemap
 ---
 
 flowchart TB
-   root{"/(root)"} ---> own(/owners)
-   root --> GETroot{{GET}}
+   root{"/(root)"}  --> GETroot{{GET}}
    root --> api(/api)
    api --> currencies(/currencies)
    currencies --> curDate("?date=")

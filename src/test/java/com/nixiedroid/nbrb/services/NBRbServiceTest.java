@@ -9,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class NBRbServiceTest {
 
@@ -44,15 +43,23 @@ class NBRbServiceTest {
     @Test
     void getRateTest() {
         CurrencyRate expected = CurrencyRate.builder()
-                .id(35)
-                .date(null)
-                .abbreviation("CYP")
-                .name("Кипрский фунт")
+                .id(431)
+                .date(LocalDate.now())
+                .abbreviation("USD")
+                .name("Доллар США")
                 .scale(1)
                 .officialRate(0.0)
                 .build();
-        CurrencyRate currencyRate = service.getRateByIdToday(35);
+        CurrencyRate currencyRate = service.getRateByIdToday(431);
 
-        Assertions.assertEquals(expected,currencyRate);
+        Assertions.assertEquals(expected.id(),currencyRate.id());
+        Assertions.assertEquals(expected.date(),currencyRate.date());
+        Assertions.assertEquals(expected.name(),currencyRate.name());
+        Assertions.assertEquals(expected.scale(),currencyRate.scale());
+
+        CurrencyRate currencyRate2 = service.getRateByNameToday("USD");
+
+        Assertions.assertEquals(currencyRate,currencyRate2);
+
     }
 }

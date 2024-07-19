@@ -1,6 +1,5 @@
 package com.nixiedroid.nbrb.models.db;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;

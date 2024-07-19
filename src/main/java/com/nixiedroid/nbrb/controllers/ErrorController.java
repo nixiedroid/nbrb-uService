@@ -1,4 +1,4 @@
-package com.nixiedroid.petclinic.controller;
+package com.nixiedroid.nbrb.controllers;
 
 import jakarta.annotation.Nonnull;
 import org.springframework.http.HttpStatus;
@@ -48,9 +48,9 @@ public class ErrorController {
 
     /**
      * Handles {@link NoResourceFoundException} exceptions.
-     * <br>Returns a response entity with HTTP status 400 (Bad Request) and a generic bad request message.
+     * <br>Returns a response entity with HTTP status 405 (Method not allowed) and a generic Method not allowed  message.
      *
-     * @return a ResponseEntity with status 400 and a bad request message
+     * @return a ResponseEntity with status 405 (Method not allowed) and a generic Method not allowed message
      */
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<?> methodNotAllowed() {
