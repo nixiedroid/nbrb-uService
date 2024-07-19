@@ -1,9 +1,10 @@
 package com.nixiedroid.nbrb.models.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
 
 import java.time.LocalDate;
-
+@Builder
 public record CurrencyRate(
         @JsonProperty("Cur_ID") int id,
         @JsonProperty("Date") LocalDate date,
